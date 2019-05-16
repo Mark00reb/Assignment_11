@@ -5,14 +5,20 @@ dataMpg = pand.read_csv('Z:\Documents\_INF 354\Assignment 11\Assignment_11\mpg.c
 #Add column of price per person
 dataMpg ['Displacement_Per_Sec'] = dataMpg['displacement']/dataMpg['acceleration']
 
+print('_________Display Dispalcement Per Accelleration___________________________________________________________')
+print(dataMpg)
+
 #Conditional
 light = dataMpg['weight'] < 3300
 
+print('_________Display Display weight under 3300 lbs______________________________________________________________')
+print(dataMpg[light])
 
 #Correlation
 dataMpg['Cor_Co_Effecient'] = dataMpg['weight'].corr(dataMpg['horsepower'])
 
-print(dataMpg[light])
+print('_________display Cor Co-Eff__________________________________________________________________________________')
+print(dataMpg)
 
 #Plot graph
 graph.bar(dataMpg['weight'], dataMpg['mpg'], color='purple', width= 125)
